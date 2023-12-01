@@ -16,8 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var switch1: UISwitch!
     @IBOutlet private weak var switch2: UISwitch!
 
-    private var n1 = 0
-    private var n2 = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +24,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func buttonPressed(_ sender: Any) {
+
+        var n1 = 0
+        var n2 = 0
 
         if switch1.isOn {
             n1 = (Int(textField1.text!) ?? 0) * -1
