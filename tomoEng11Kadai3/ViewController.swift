@@ -25,23 +25,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func buttonPressed(_ sender: Any) {
 
-        var n1 = 0
-        var n2 = 0
+        let inputNumber1 = Int(textField1.text ?? "") ?? 0
+        let inputNumber2 = Int(textField2.text ?? "") ?? 0
 
+        let invertedNumber1: Int
         if switch1.isOn {
-            n1 = (Int(textField1.text!) ?? 0) * -1
+            invertedNumber1 = -inputNumber1
         } else {
-            n1 = Int(textField1.text!) ?? 0
+            invertedNumber1 = inputNumber1
         }
 
+        let invertedNumber2: Int
         if switch2.isOn {
-            n2 = (Int(textField2.text!) ?? 0) * -1
+            invertedNumber2 = -inputNumber2
         } else {
-            n2 = Int(textField2.text!) ?? 0
+            invertedNumber2 = inputNumber2
         }
 
-        label1.text = String(n1)
-        label2.text = String(n2)
-        resultLabel.text = String(n1 + n2)
+        label1.text = String(invertedNumber1)
+        label2.text = String(invertedNumber2)
+        resultLabel.text = String(invertedNumber1 + invertedNumber2)
     }
 }
